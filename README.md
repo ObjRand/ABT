@@ -1,13 +1,14 @@
-#𝓡𝓔𝓐𝓓 𝓜𝓔, An Important ABT Guide
+#ABT
+𝓡𝓔𝓐𝓓 𝓜𝓔, An Important ABT Guide
 
 
-"INSTALLATION":
+# INSTALLATION
 
 - INSTALLATION:
 To Start The Program You must have all the pips installed. To Check If You Installed The pips, Go to the Tools Folder and enter installer.bat. (It Will Install All Pips Necessary)
 
 
-"The ABT Guide":
+# The ABT Guide
 
 - Playing BGS:
 Run The  App, and then press on "Play Current BG" to play a bg. (The Default Background first time is "vhs".)
@@ -28,7 +29,7 @@ Video To Bg: Give A FULL Directory of a video, and the BGS name (It will turn it
 - Settings:
 To Toggle a [T/F] Value, you must write "!t *vars_name_with_underscore_and_lowercase*".  EX: ("!t fast_mode") To Toggle Fast Mode.
  
-# OPTIONS #
+# APP OPTIONS
 Fast_Mode: Makes ABT WAYYY less preformance heavy, but the Key Input For Exiting might be a little glichty.
 
 
