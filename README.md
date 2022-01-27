@@ -4,6 +4,8 @@ ABT aka Animated Background Tool is a windows only python program that makes it 
 
 # 𝓡𝓔𝓐𝓓 𝓜𝓔, An Important ABT Guide
 
+This Guide Goes Through all the needed Subjects and Topics.
+
 
 # INSTALLATION
 
