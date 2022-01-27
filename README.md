@@ -35,7 +35,7 @@ Video To Bg: Give A FULL Directory of a video, and the BGS name (It will turn it
 To Toggle a [T/F] Value, you must write "!t *vars_name_with_underscore_and_lowercase*".  EX: ("!t fast_mode") To Toggle Fast Mode.
  
 # APP OPTIONS
-Fast_Mode: Makes ABT WAYYY less preformance heavy, but the Key Input For Exiting might be a little glichty.
+- Fast_Mode: Makes ABT WAYYY less preformance heavy, but the Key Input For Exiting might be a little glichty.
 
 
 # THE END
