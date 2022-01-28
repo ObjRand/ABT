@@ -17,6 +17,7 @@ To Start The Program You must have all the pips installed. To Check If You Insta
 
 - Playing BGS:
 Run The  App, and then press on "Play Current BG" to play a bg. (The Default Background first time is "vhs".)
+To Stop Playing The Bg (And Return To Bg,) Press "END" a Couple Of Times. 
 
 - Adding BGS:
 Go To The "backgrounds" Folder, and Then, Enter the "bgs" Folder, After that add your bg folder to the "bgs" folder. (To Check If It Worked, Go To The "Change Your BG" Chapter Down Below.)
