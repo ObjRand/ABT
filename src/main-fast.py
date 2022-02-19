@@ -1,4 +1,6 @@
-import os,ctypes,json,keyboard
+import os,ctypes,json,keyboard,linecache,time
+
+wallpath = ''
 
 # CLS #
 os.system('cls')
@@ -59,11 +61,14 @@ def apploop():
     # APP LOOP #
     while Loop_Running:
         if keyboard.is_pressed('end'):
+            gset_old_wallpaper('set')
             Loop_Running = False
         else:
             curimage = image_list[loopvar]
 
-            WALLPAPER_PATH = CD + "\\backgrounds\\bgs\\" + bgstring + "\\frames\\" + curimage
+            wp = CD + "\\backgrounds\\bgs\\" + bgstring + "\\frames\\" + curimage
+            
+            print(wp)
 
             loopvar += 1
 
@@ -71,7 +76,22 @@ def apploop():
             if loopvar > ammountofitems - 1:
                 loopvar -= ammountofitems
 
-            ctypes.windll.user32.SystemParametersInfoW(20,0,WALLPAPER_PATH,3)
+            ctypes.windll.user32.SystemParametersInfoW(20,0,wp,3)
     quit()
-        
-apploop()
+
+def gset_old_wallpaper(mode):
+    global wallpath
+    if mode == 'get':
+        os.chdir('src')
+        os.chdir('gwtf')
+        os.system('start /min run.bat')
+        print('getting wallpaper...')
+        time.sleep(2)
+        wallpath = linecache.getline('wallpath.txt', 1)
+        os.chdir('..')
+        os.chdir('..')
+        apploop()
+    if mode == 'set':
+        ctypes.windll.user32.SystemParametersInfoW(20,0,wallpath.rstrip('\n'),3)
+
+gset_old_wallpaper('get')

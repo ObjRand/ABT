@@ -1,4 +1,4 @@
-import sys,os
+import sys,os,time,ctypes
 from colorama import Fore, Back, Style
 
 fastmode = True
@@ -14,7 +14,6 @@ def ABT_print():
     print(Style.RESET_ALL)
 
 def playbg():
-
     if fastmode:
         os.system('main-fast.py')
     else:

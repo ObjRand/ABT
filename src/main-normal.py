@@ -1,4 +1,26 @@
-import os,ctypes,json,keyboard,threading
+import os,ctypes,json,keyboard,threading,linecache
+
+wallpath = ''
+
+def gset_old_wallpaper(mode):
+    global wallpath
+    if mode == 'set':
+        os.chdir('src')
+    os.chdir('gwtf')
+    if mode == 'get':
+        os.system('start /min run.bat')
+        print('getting wallpaper...')
+        time.sleep(0.5)
+        wallpath = linecache.getline('wallpath.txt', 1)
+    os.chdir('..')
+    if mode == 'set':
+        os.chdir('..')
+        print('setting wallpaper...')
+        time.sleep(0.5)
+        print(wallpath)
+        ctypes.windll.user32.SystemParametersInfoW(20,0,wallpath,3)
+
+gset_old_wallpaper('get')
 
 # CLS #
 os.system('cls')
@@ -80,12 +102,26 @@ def ExitKeyDec():
 
     while Loop_Running:
         if keyboard.is_pressed('end'):
+            gset_old_wallpaper()
             Loop_Running = False
             quit()
 
+def gset_old_wallpaper(mode):
+    global wallpath
+    if mode == 'get':
+        os.chdir('src')
+        os.chdir('gwtf')
+        os.system('start /min run.bat')
+        print('getting wallpaper...')
+        time.sleep(2)
+        wallpath = linecache.getline('wallpath.txt', 1)
+        os.chdir('..')
+        os.chdir('..')
+        # START THREADS #           
+        threading.Thread(target=apploop).start() # APP LOOP #
+        threading.Thread(target=ExitKeyDec).start() # EXIT KEY DEC #
+    if mode == 'set':
+        ctypes.windll.user32.SystemParametersInfoW(20,0,wallpath.rstrip('\n'),3)
 
-# START THREADS #           
-threading.Thread(target=apploop).start() # APP LOOP #
-threading.Thread(target=ExitKeyDec).start() # EXIT KEY DEC #
-
+gset_old_wallpaper('get')
 
